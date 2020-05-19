@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int QuantCompra, AtrasoPagamento, ScoreVolume;
+    int QuantCompra, AtrasoPagamento, ScoreVolume, ScoreInadimplencia, ScoreFormaPagamento;
     double ValorCompra;
     char TipoCompra;
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
@@ -35,8 +35,23 @@ int main()
     }
     cout << "Score de volume de compras = " << ScoreVolume << endl ;
     cout << endl;
-    cout << "Score de inadimplencia ="<<endl;
-    cout << "Score de forma de pagamento ="<<endl;
+    if (AtrasoPagamento == 1 || QuantCompra > 0 ){
+        ScoreInadimplencia = 15;
+    }
+    else if (AtrasoPagamento == 0 && QuantCompra > 0){
+        ScoreInadimplencia = 30;
+    }
+    else{
+        ScoreInadimplencia = 0;
+    }
+    cout << "Score de inadimplencia = "<< ScoreInadimplencia << endl;
+    if (TipoCompra == 'C' || TipoCompra == 'B'){
+        ScoreFormaPagamento = 10;
+    }
+    else {
+        ScoreFormaPagamento = 5;
+    }
+    cout << "Score de forma de pagamento = "<< ScoreFormaPagamento <<endl;
     cout << endl;
     cout << "Classificação final =" << endl;
 
