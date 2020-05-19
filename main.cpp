@@ -24,13 +24,13 @@ int main()
     if (QuantCompra <= 2 && ValorCompra <=3000){
         ScoreVolume = 20;
     }
-    if (QuantCompra > 2 && ValorCompra <= 3000){
+    else if (QuantCompra > 2 && ValorCompra <= 3000){
         ScoreVolume = 40;
     }
-    if (ValorCompra > 3000){
+    else if (ValorCompra > 3000){
         ScoreVolume =  60;
     }
-    if (QuantCompra = 0){
+    else{
        ScoreVolume= 0 ;
     }
     cout << "Score de volume de compras = " << ScoreVolume << endl ;
