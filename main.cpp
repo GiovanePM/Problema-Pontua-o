@@ -4,9 +4,9 @@ using namespace std;
 
 int main()
 {
-    int QuantCompra, AtrasoPagamento, ScoreVolume, ScoreInadimplencia, ScoreFormaPagamento;
+    int QuantCompra, AtrasoPagamento, ScoreVolume, ScoreInadimplencia, ScoreFormaPagamento, ScoreFinal;
     double ValorCompra;
-    char TipoCompra;
+    char TipoCompra, Classificacao;
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
     cout << "--------------------------------" <<endl;
     cout << "INFORME OS DADOS DO ULTIMO ANO" <<endl;
@@ -53,7 +53,16 @@ int main()
     }
     cout << "Score de forma de pagamento = "<< ScoreFormaPagamento <<endl;
     cout << endl;
-    cout << "Classificação final =" << endl;
+    ScoreFinal = ScoreFormaPagamento + ScoreInadimplencia + ScoreVolume;
+    if (ScoreFinal<=25){
+        cout << "Classificação final = " << "CLIENTE BRONZE" << endl;
+    }
+    else if (ScoreFinal>25 && ScoreFinal <= 75){
+        cout << "Classificação final = " << "CLIENTE PRATA"<< endl;
+    }
+    else{
+        cout << "Classificação final = " << "CLIENTE OURO"<< endl;
+    }
 
 
     return 0;
